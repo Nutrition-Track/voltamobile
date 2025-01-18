@@ -17,7 +17,10 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
             width: screenwidth,
             height: screenwidth * aspectratio,
             alignment: Alignment.topLeft,
-            color: Colors.blue[400],
+            decoration: BoxDecoration(
+              color: Colors.blue[400],
+              borderRadius: BorderRadius.circular(15.0), // Add rounded corners
+            ),
             child: Column(
             children: [ // list of boxes
               Row( // header row
@@ -26,7 +29,10 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                   Container(
                     width: screenwidth / 3,
                     height: 30,
-                    color: Colors.red[200]
+                    decoration: BoxDecoration(
+                      color: Colors.blue[200],
+                      borderRadius: BorderRadius.circular(10.0), // Add rounded corners to inner container
+                    ),
                   ),
                   Container(
                     width: screenwidth / 6,
