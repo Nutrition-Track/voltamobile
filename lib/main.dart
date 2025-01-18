@@ -20,13 +20,19 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                 width: screenwidth,
                 height: screenwidth * aspectratio,
                 alignment: Alignment.topLeft,
-                color: Colors.blue[400],
+                decoration: BoxDecoration(
+                  color: Colors.blue[400],
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 child: Column(children: [
                   // list of boxes
                   Padding(
                       padding: EdgeInsets.all(uielementpadding),
                       child: Container(
-                          color: Colors.red[400],
+                          decoration: BoxDecoration(
+                            color: Colors.red[400],
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
                           width: screenwidth,
                           height: 30,
                           child: Row(
@@ -38,17 +44,27 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                                 Padding(
                                     padding: EdgeInsets.all(6),
                                     child: Container(
-                                        // left widget, user menu
-                                        width: screenwidth / 3,
-                                        height: 30,
-                                        color: Colors.red[200])),
+                                      // left widget, user menu
+                                      width: screenwidth / 3,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red[200],
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                    )),
                                 Padding(
-                                    padding: EdgeInsets.all(6),
-                                    child: Container(
-                                        // right widget, welcome text
-                                        width: screenwidth / 6,
-                                        height: 30,
-                                        color: Colors.red[200])),
+                                  padding: EdgeInsets.all(6),
+                                  child: Container(
+                                      // right widget, welcome text
+                                      width: screenwidth / 6,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red[200],
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      )),
+                                ),
                               ]))),
                   Padding(
                     padding: EdgeInsets.all(uielementpadding),
@@ -56,7 +72,10 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                       // diet progress
                       width: 380,
                       height: (400 * aspectratio) / 6,
-                      color: Colors.blue[300],
+                      decoration: BoxDecoration(
+                        color: Colors.blue[300],
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
                   ),
                   Padding(
@@ -65,35 +84,57 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                           // food inputs
                           width: 380,
                           height: (400 * aspectratio) / 6,
-                          color: Colors.blue[300],
+                          decoration: BoxDecoration(
+                            color: Colors.blue[300],
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
                           child: Row(
                               textDirection: TextDirection.ltr, // left to right
                               children: [
-                                Padding( // food inputs barcode
+                                Padding(
+                                    // food inputs barcode
                                     padding: EdgeInsets.all(6),
                                     child: Container(
-                                      color: Colors.green[400],
+                                      decoration: BoxDecoration(
+                                        color: Colors.green[300],
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
                                       width: screenwidth / 4,
                                     )),
-                                Padding( // food inputs ai (center!)
+                                Padding(
+                                    // food inputs ai (center!)
                                     padding: EdgeInsets.all(6),
                                     child: Container(
-                                      color: Colors.green[400],
+                                      decoration: BoxDecoration(
+                                        color: Colors.green[300],
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
                                       width: screenwidth / 4,
                                     )),
-                                Padding( // food inputs manual
+                                Padding(
+                                    // food inputs manual
                                     padding: EdgeInsets.all(6),
                                     child: Container(
-                                      color: Colors.green[400],
+                                      decoration: BoxDecoration(
+                                        color: Colors.green[300],
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
                                       width: screenwidth / 4,
                                     )),
                               ]))),
-                  Padding( // calendar
+                  Padding(
+                    // calendar
                     padding: EdgeInsets.all(uielementpadding),
                     child: Container(
                       width: 380,
                       height: (400 * aspectratio) / 6,
-                      color: Colors.blue[300],
+                      decoration: BoxDecoration(
+                        color: Colors.blue[300],
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
                   ),
                 ]))));
