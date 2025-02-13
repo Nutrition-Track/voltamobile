@@ -8,8 +8,8 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = new DateTime.now();
-    DateTime date = new DateTime(now.year, now.month, now.day);
+    DateTime now = DateTime.now();
+    DateTime date = DateTime(now.year, now.month, now.day);
     String day;
     if (date.weekday == 0) {
       day = "Sunday";
@@ -46,82 +46,97 @@ class SelectionContainerDisabledExampleApp extends StatelessWidget {
                       color: Colors.blue[400],
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    child: Column(children: [
-                      // list of boxes
-                      Padding(
-                          // header
-                          padding: EdgeInsets.all(uielementpadding),
-                          child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.red[400],
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                              width: screenwidth,
-                              height: 30,
+                    child: Column(
+                      children: [
+                        // list of boxes
+                        Column(children: [
+                          // intro box
+                          Padding(
+                              // header
+                              padding: EdgeInsets.all(uielementpadding),
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.red[400],
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                  width: screenwidth,
+                                  height: 30,
+                                  child: Row(
+                                      // header row
+                                      textDirection: TextDirection
+                                          .ltr, // this is required for the row to render properly
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: <Widget>[
+                                        Padding(
+                                            padding: EdgeInsets.all(6),
+                                            child: Container(
+                                              // left widget, user menu
+                                              width: screenwidth / 3,
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                color: Colors.red[200],
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                            )),
+                                        Padding(
+                                          padding: EdgeInsets.all(6),
+                                          child: Container(
+                                              // right widget, welcome text
+                                              width: screenwidth / 6,
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                color: Colors.red[200],
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              )),
+                                        ),
+                                      ]))),
+                          Padding(
+                              // welcome text
+                              padding: EdgeInsets.all(uielementpadding),
+                              child: DefaultTextStyle.merge(
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                  child: Center(
+                                      child: Text(
+                                          'Welcome\n${date.month}/${date.day}/${date.year} - $day',
+                                          textAlign: TextAlign.center)))),
+                          Padding(
+                              // progress bar
+                              padding: EdgeInsets.all(5),
+                              child: LinearProgressIndicator(
+                                value: 0.66,
+                                minHeight: 30,
+                                color: Color.fromARGB(255, 215, 98, 244),
+                                backgroundColor:
+                                    Color.fromARGB(255, 255, 255, 255),
+                              )),
+                          Padding(
+                              padding: EdgeInsets.all(5),
+                              child: SizedBox(
+                                width: screenwidth,
+                                child: Text('___/2000 calories',
+                                    textAlign: TextAlign.left),
+                              )),
+                          Padding(
+                              // pie chart area, includes pie chart text
+                              padding: EdgeInsets.all(5),
                               child: Row(
-                                  // header row
-                                  textDirection: TextDirection
-                                      .ltr, // this is required for the row to render properly
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: <Widget>[
-                                    Padding(
-                                        padding: EdgeInsets.all(6),
-                                        child: Container(
-                                          // left widget, user menu
-                                          width: screenwidth / 3,
-                                          height: 30,
-                                          decoration: BoxDecoration(
-                                            color: Colors.red[200],
-                                            borderRadius:
-                                                BorderRadius.circular(15.0),
-                                          ),
-                                        )),
-                                    Padding(
-                                      padding: EdgeInsets.all(6),
-                                      child: Container(
-                                          // right widget, welcome text
-                                          width: screenwidth / 6,
-                                          height: 30,
-                                          decoration: BoxDecoration(
-                                            color: Colors.red[200],
-                                            borderRadius:
-                                                BorderRadius.circular(15.0),
-                                          )),
-                                    ),
-                                  ]))),
-                      Padding(
-                          // welcome text
-                          padding: EdgeInsets.all(uielementpadding),
-                          child: DefaultTextStyle.merge(
-                              style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                              child: Center(
-                                  child: Text(
-                                      'Welcome\n' +
-                                          date.month.toString() +
-                                          '/' +
-                                          date.day.toString() +
-                                          '/' +
-                                          date.year.toString() +
-                                          ' - ' +
-                                          day,
-                                      textAlign: TextAlign.center)))),
-                      Padding(
-                        // progress bar
-                          padding: EdgeInsets.all(5),
-                          child: LinearProgressIndicator(
-                            value: 0.66,
-                            minHeight: 30,
-                            color: Color.fromARGB(255, 215, 98, 244),
-                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                          )),
-                      Padding(
-                        padding: EdgeInsets.all(5),
-                        child: SizedBox(
-                          width: screenwidth,
-                          child: Text('___/2000 calories', textAlign: TextAlign.left),
-                        )
-                      ),
-                    ])))));
+                                children: [
+                                  Column(children: [
+                                    Text('Carbon Footprint'),
+                                    Text('___ g'),
+                                    Container(// detailed summary
+
+                                        )
+                                  ]),
+                                  // pie chart
+                                ],
+                              ))
+                        ])
+                      ],
+                    )))));
   }
 }
